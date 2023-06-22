@@ -1,0 +1,13 @@
+extends layout 
+
+block content 
+    header 
+        h1= 'Puppy Message Board'
+        p= 'What do you have to say?'
+    main
+        section.form-container 
+            form(method='POST' action='/new')
+                input(type='text', placeholder='Title' name='title' id='title')
+                textarea(name='description' placeholder='Message' cols='30' )
+                input(type='text' placeholder='Username' name='username' id='username')
+                button(type='submit' id='submit-btn')= 'post'

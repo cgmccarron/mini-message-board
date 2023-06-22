@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  header 
+    h1= 'Puppy Message Board!'
+    p= "What's your thoughts about puppies"
+        .button-container
+        a(href=`http://localhost:${process.env.PORT || 3000}/new`): button.compose= "Got something to say?"
+  main
+    each message in messages 
+      section.message-card 
+        h2= message.title
+        p.description= message.description
+        footer 
+          p.username= message.username
+          p.date= message.date
+
